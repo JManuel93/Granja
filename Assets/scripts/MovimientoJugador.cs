@@ -7,6 +7,7 @@ public class MovimientoJugador : MonoBehaviour
    public Rigidbody2D rg;
    public Vector2 entrada;
    Animator animator;
+   public GameObject preFabTrigo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,4 +61,10 @@ public class MovimientoJugador : MonoBehaviour
           //entrada = contexto.ReadValue<Vector2>();
           
     }
+    public void SembrarTrigo(InputAction.CallbackContext contexto){
+     if(contexto.started) {
+        Instantiate(preFabTrigo ,transform.position, Quaternion.identity);
+     }  
+    }
+   
 }
