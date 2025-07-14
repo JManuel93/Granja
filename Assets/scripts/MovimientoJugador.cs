@@ -66,5 +66,13 @@ public class MovimientoJugador : MonoBehaviour
         Instantiate(preFabTrigo ,transform.position, Quaternion.identity);
      }  
     }
-   
+    
+       private void OnTriggerEnter2D(Collider2D colision){
+               if(colision.CompareTag("Nido")){
+                      Destroy(colision.gameObject);
+                      GameManager.instancia.SumarHuevo();
+               }
+       }
+
+
 }
